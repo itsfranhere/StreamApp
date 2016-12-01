@@ -12,16 +12,16 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 // we want to grab only the "people" part of the database
-var filmsDatabase = database.ref('films');
+var peopleDatabase = database.ref('films');
 
 // create a list of people
-var filmList = []; // empty list, for now
+var peopleList = []; // empty list, for now
 
 // load all the children of "people" 
 // keep listening for new children
-filmsDatabase.on('child_added', function(childData){
+peopleDatabase.on('child_added', function(childData){
     // run these instruction for each child
     // console.table( childData.val() );
-    var film = childData.val(); // extract data about the film
-    filmList.push( film ); // add the person to the peopleList
+    var person = childData.val(); // extract data about the person
+    peopleList.push( person ); // add the person to the peopleList
 })

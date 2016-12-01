@@ -11,14 +11,12 @@ var homeDropdown = $('#home select')
 var homeSection = $('#home')
 var resultsSection = $('#results')
 var resultsBackButton = $('#results .back')
+var resultsToggleButton = $('#results .toggle')
+var resultsMap = $('#map')
 var resultsOL = $('#results ol')
 var detailsSection = $('#details')
 var detailsBackButton = $('#details .back')
 var detailsInfo = $('#details #info')
-
-// First way to get a value
-value = $("#filmSearch").val(); 
-
 
 // tell the GO button to do something when we click it
 homeGoButton.click( function()
@@ -66,3 +64,33 @@ detailsBackButton.click( function(){
    detailsSection.hide()
    resultsSection.show()
 })
+
+// button to swrich between list and map
+resultsToggleButton.click(function() {
+
+    console.log('clicked resultsToggleButton')
+
+    // find out which element is currently visible
+    // is it the map or the list?
+    
+    var listDisplay = resultsOL.css('display')
+    if (listDisplay == 'block') isListVisible = true
+    else isListVisible = false
+
+    // if list is visible
+    if (isListVisible) {
+        resultsMap.show()
+        resultsOL.hide()
+        resultsToggleButton.html('List')
+        //document.getElementById("toggle").innerHTML = "List";
+    } 
+
+    else {
+        resultsOL.show()
+        resultsMap.hide()
+        resultsToggleButton.html('Map')
+        //document.getElementById("toggle").innerHTML = "Map";
+    }
+    // if it's the list, we want to show the map
+})
+

@@ -1,10 +1,23 @@
 html {
-    font-family: 'Work Sans', sans-serif;
-    background: rgb(0, 253, 183);
+    font-family: 'Open Sans', sans-serif;
+    background: #0c9cfc;
 /*
     background-image: url("../img/unsplash.jpeg");
     background-size: cover;
 */
+}
+
+body {
+    background: #0c9cfc !important;
+}
+
+h1 {
+    font-size: 1.5em !important;
+    text-align: center;
+}
+
+a {
+    color: #0c9cfc !important;
 }
 
 /* hide the results and details by default */
@@ -13,12 +26,24 @@ html {
 }
 
 section {
-    background: rgba(255, 255, 255, 0.9);
+    background: white;
     margin: auto;
     margin-top: 20px;
-    max-width: 500px;
+    max-width: 350px;
     padding: 20px;
-    border-radius: 20px;
+    position: relative;
+    min-height: 500px;
+}
+
+section#home {
+    border: 1px solid;
+    border-radius: 0;
+    color:white;
+}
+
+section#results ol {
+    margin-left: -20px;
+    width: 113%;
 }
 
 /* select the img with an id="logo" */
@@ -26,25 +51,54 @@ section {
 /* img #logo find an img, then inside it find another element with an id="logo" */
 img#logo {
     margin: auto;
-    width: 50%;
-    display: block; /* img by default is an "inline" element, so without this line it wouldn't centre */
+    width: 70%;
+    margin-top: -20px;
 }
 
 /* apply the following styles to both the select and the button elements... notice the comma in between them */
 select, button {
     width: 100%;
-    background: black;
-    color: white;
-    font-size: 200%;
+    background: white;
+    color: lightgray;
+    font-size: 170%;
 }
 
 button {
     border: none;
-    
-    /* to make it a circle ...*/
+    margin-top: 20px;
+    left: 35%;
     width: 100px;
     height: 100px;
-    border-radius: 50%;
+    background: #0c9cfc;
+    color: white;
+}
+
+a {
+    cursor:pointer;
+}
+
+p {
+    margin:5px 0 5px;
+}
+
+div.data-content {
+    background: #0c9cfc;
+    position: absolute;
+    bottom: 0;
+    height: 340px;
+    width: 100%;
+    margin-left: -20px;
+    padding: 0 15px;
+}
+
+span.category {
+    display: block;
+    margin-top: 20px;
+    font-size:14px;
+}
+
+section#results {
+    padding-bottom: 0;
 }
 
 #results ol {
@@ -54,12 +108,12 @@ button {
 }
 
 #results li {
-    border: 1px solid #ccc;
     margin-bottom: -1px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
     transition: background 0.5s;
+    border-bottom: 1px solid lightgray;
 }
 
 #results li:hover {
@@ -68,22 +122,184 @@ button {
 
 #results img {
     max-width: 8rem;
-    position: absolute;
 }
 
 #results h2 {
     margin-top: 10px;
     margin-bottom: 0;
-    padding-left: calc(8rem + 10px);
+    padding: 0;
+    display: inline-block;
     line-height: 1;
     font-size: 1.5rem;
-    padding-bottom: calc(8rem - 1.5rem - 10px);
 }
 
+#map {
+    width: 100%;
+    height: 30rem; /* experiment with different heights */
+    display:none;
+}
 
+/* Rating Stars */
+span.stars, span.stars span {
+    display: block;
+    background: url(http://www.ulmanen.fi/stuff/stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
 
+span.stars span {
+    background-position: 0 0;
+}
 
+select.form-control {
+    margin: 10px 0;
+}
 
+/* Main page */
 
+p.discover {
+    color: #0c9cfc;
+    font-size: 1.2em;
+    margin-top: -30px;
+}
 
+p.get-started {
+    font-size: 13px;
+}
 
+select.form-control {
+    color: lightgray !important;
+}
+
+div.filmdata-container {
+    position: absolute;
+    background: white;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+}
+
+h2.show-more {
+    color: #0c9cfc;
+    border: 1px solid #0c9cfc;
+    border-radius: 2em;
+    padding: 10px !important;
+}
+
+h2.show-more:hover {
+    color: white;
+    background:#0c9cfc;
+    border-radius: 2em;
+    padding: 10px !important;
+    -webkit-transition: all 100ms ease-in 100ms;
+    -moz-transition: all 100ms ease-in 100ms;
+    -o-transition: all 100ms ease-in 100ms;
+    transition: all 100ms ease-in 100ms;
+}
+
+img.discover-more {
+    width: 30px;
+    background: white;
+    position: absolute;
+    right: 25px;
+    top: 56%;
+}
+
+p.subtitles {
+    display: inline-block;
+}
+
+p.audio {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+div.main-buttons {
+    text-align: center;
+}
+
+div.main-buttons a {
+    border-radius: 1.4em;
+    padding: 0.4em;
+}
+
+div.main-buttons a:hover {
+    color: white !important;
+    background:#0c9cfc;
+    border-radius: 2em;
+    text-decoration:none;
+    padding: 10px !important;
+    -webkit-transition: all 100ms ease-in 100ms;
+    -moz-transition: all 100ms ease-in 100ms;
+    -o-transition: all 100ms ease-in 100ms;
+    transition: all 100ms ease-in 100ms;
+}
+
+/* Results Styles-1*/
+
+div.film-image {
+    width:113%;max-height:250px;overflow:hidden;position:relative;margin-left:-20px
+}
+
+p.film-rating {
+    font-size:35px; display:inline-block; margin-right: 20px;margin-bottom: 0; vertical-align: -webkit-baseline-middle;
+}
+
+p.film-duration {
+    display:inline-block;
+}
+
+p.separator {
+    display:inline-block; margin:0 8px 0
+}
+
+p.film-year {
+    display:inline-block;
+}
+
+a.play-trailer {
+    display:inline-block;border: 1px solid;margin-right: 15px;padding: 5px;
+}
+
+a.buy-tickets {
+    display:inline-block;border: 1px solid;margin-right: 15px;padding: 5px;
+}
+
+a.get-social {
+    display:inline-block;border: 1px solid;margin-right: 15px;padding: 5px;
+}
+
+/* Results Styles-2*/
+
+h2.film-title {
+    display: inline-block;
+    margin-right:20px;
+    max-width: 190px;
+}
+
+h2.trailer-warning {
+    font-size: 15px;
+    background: red;
+    display: inline-block;
+    color: white !important;
+    padding: 5px;
+}
+
+button.go {
+    margin: 15px 0;
+    color: white;
+    font-size: 35px;
+    border: 1px solid white;
+}
+
+button.go:hover {
+    color: #0c9cfc;
+    background:white;
+}
+
+.navbar-brand, .navbar-nav > select > option {
+    line-height: 100px;
+    height: 75px;
+    padding-top: 0px;
+}

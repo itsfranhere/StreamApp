@@ -1,3 +1,6 @@
+
+
+
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -13,8 +16,20 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,700" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css' rel='stylesheet' /> 
+
+        <!-- Open Sans Font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+
+        <!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -24,20 +39,30 @@
         <!-- this is the home section-->
         <section id="home">
             <img id="logo" src="img/logo.png">
-            <h1>I'd like to watch a film within the following category:</h1>
-            <select>
-                <option value="drama">Drama</option>
-                <option value="horrow">Horror</option>
-            </select>
-            <button>GO</button>
-            <p>Swap skills with people around you!</p>
-            <p>Pick an option to get started.</p>
+            <p class="discover">Discover new films.</p>
+            <div class="data-content">
+                <span class="category">Choose a category:</span>
+                <select class="form-control">
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="dramaCategory">Drama</option>
+                    <option value="horrorCategory">Horror</option>
+                    <option value="actionCategory">Action</option>
+                    <option value="crimeCategory">Crime</option>
+                    <option value="comedyCategory">Comedy</option>
+                    <option value="romanticCategory">Romantic</option>
+                    <option value="animeCategory">Anime</option>
+                    <option value="cultCategory">Cult</option>
+                    <option value="sportsCategory">Sports</option>
+                    <option value="fantasyCategory">Fantasy</option>
+                    <option value="gayCategory">Gay/Lesbian</option>
+                </select>
+                <button class="go">GO</button><br>
+                <p class="get-started">Pick an option to get started.</p>
+            </div>
         </section>
         <!-- this is the results section -->
         <section id="results">
             <a class="back button">Back</a>
-            <h1>I'd like someone to bake a cake</h1>
-            <p>2 people around you can bake a cake</p>
             <ol>
                 <li>
                     <img src="https://randomuser.me/api/portraits/women/53.jpg">
@@ -60,6 +85,7 @@
                     <p>About this person</p>
                 </li>
             </ol>
+            <div id="map"></div>
         </section>
         <!-- this is the details section -->
         <section id="details">
@@ -76,12 +102,26 @@
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
+
+        <!-- Load the Mapbox JS -->
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js'></script>
+        <script src="js/mapbox.js"></script>
+
         <!-- load the Firebase library -->
         <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
         <script src="js/firebase.js"></script>
+
+        <!-- Our own helper scripts -->
         <script src="js/filter.js"></script>
         <script src="js/show.js"></script>
+        
+        <!--        Bootstrap  -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <!-- MAIN.JS is the script that binds them all -->
+        <!-- it needs to be loaded after all the others -->
         <script src="js/main.js"></script>
+
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <!--
